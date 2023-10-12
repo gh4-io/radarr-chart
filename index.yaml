@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  radarr:
+  - annotations:
+      app: radarr
+    apiVersion: v2
+    appVersion: nightly
+    created: "2023-10-12T17:32:18.588524803Z"
+    description: Radarr is a movie collection manager for Usenet and BitTorrent users.
+      It can monitor multiple RSS feeds for new movies and will interface with clients
+      and indexers to grab, sort, and rename them. It can also be configured to automatically
+      upgrade the quality of existing files in the library when a better quality format
+      becomes available. Note that only one type of a given movie is supported. If
+      you want both an 4k version and 1080p version of a given movie you will need
+      multiple instances.
+    digest: 20647210e3b3fdf919f5aa095ebf2789e05d68c4d938a58742200100611dad69
+    icon: https://github.com/Radarr/Radarr/blob/bfbeb4c62ea9c05c42d8157a4f8c2d13de86ff96/Logo/128.png
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/radarr-chart/releases/download/radarr-0.1.0-beta/radarr-0.1.0-beta.tgz
+    version: 0.1.0-beta
+generated: "2023-10-12T17:32:18.588530203Z"
