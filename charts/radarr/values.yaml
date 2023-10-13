@@ -2,8 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-## @section Replica Count
-## Default replica count.
+## @param replicaCount set count of replicas.
 replicaCount: 1
 
 ## @section Image
@@ -16,6 +15,9 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "nightly"
 
+## @skip imagePullSecrets
+## @skip nameOverride
+## @skip fullnameOverride
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -28,15 +30,16 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-
+## @section Env
+## @skip env
 env:
   TZ: America/New_York
   PUID: 1000
   PGID: 1000
-
+## @skip envSecrets
 envSecrets: {}
 #   name: secret
-
+## @skip persistence
 persistence:
   enabled: true
   annotations: {}
@@ -50,17 +53,25 @@ persistence:
   # volumePath: "/storage/"
   # volumeType: DirectoryOrCreate
 
+
+## @section Media
+## @param media.enabled [string] Enables root media folder
+## @param media.existingClaim [string] Name of the existing claim
+## @param media.path [string] Path to root media folder
 media:
   enabled: true
   existingClaim: nfs-storage
   path: "/media"
 
-
+## @skip podAnnotation
 podAnnotations: {}
 
+
+## @skip podSecurityContex
 podSecurityContext: {}
 # fsGroup: 2000
 
+## @skip securityContex
 securityContext: {}
 # capabilities:
 #   drop:
@@ -69,17 +80,22 @@ securityContext: {}
 # runAsNonRoot: true
 # runAsUser: 1000
 
+
+## @skip service
 service:
   enabled: true
   type: ClusterIP
   port: 7878
 
+
+## @skip strategy
 strategy:
   rollingUpdate:
     maxSurge: 25%
     maxUnavailable: 25%
   type: RollingUpdate
 
+## @skip ingress
 ingress:
   enabled: false
   className: ""
@@ -96,6 +112,8 @@ ingress:
 #    hosts:
 #      - chart-example.local
 
+
+## @skip resources
 resources: {}
 # We usually recommend not to specify default resources and to leave this as a conscious
 # choice for the user. This also increases chances charts run on environments with little
@@ -116,7 +134,7 @@ volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
   ##
   enabled: false
-
+## @skip autoscaling
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -124,14 +142,17 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+## @skip nodeSelector
 nodeSelector: {}
 
+## @skip tolerations
 tolerations:
 - key: app.env/servarr
   value: 'false'
   effect: NoSchedule
   operator: Equal
 
+## @skip affinity
 affinity:
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
