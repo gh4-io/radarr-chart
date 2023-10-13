@@ -1,4 +1,4 @@
-helmapiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "radarr.fullname" . }}
@@ -37,14 +37,14 @@ spec:
         env:
         {{- range $key, $value := $.Values.env }}
           - name: {{ $key }}
-            value: {{ $value | quote }}
+            value: {{ $value  }}
         {{- end }}
         {{- range $key, $secret := $.Values.envSecrets }}
           - name: {{ $key }}
             valueFrom:
             secretKeyRef:
             name: {{ $secret }}
-            key: {{ $key | quote }}
+            key: {{ $key  }}
         {{- end }}
         {{- end }}
         securityContext:
@@ -82,7 +82,7 @@ spec:
         command:
           - sh
           - '-c'
-          - {{ printf "chown -R %s:%s /config" ( .Values.env.PUID | default 1000 ) ( .Values.env.PGID | default 1000 ) }}
+          - {{ printf "chown -R %d:%d /config" ( .Values.env.PUID | default 1000 ) ( .Values.env.PGID | default 1000 ) }}
         image: busybox
         imagePullPolicy: IfNotPresent
         resources: {}

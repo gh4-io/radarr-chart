@@ -2,8 +2,14 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+## @section Replica Count
+## Default replica count.
 replicaCount: 1
 
+## @section Image
+## @param image.repository docker image registry
+## @param image.pullPolicy
+## @param image.tag docker image tag
 image:
   repository: lscr.io/linuxserver/sonarr
   pullPolicy: IfNotPresent
@@ -24,12 +30,12 @@ serviceAccount:
   name: ""
 
 env:
-  - name: TZ
-    value: America/New_York
-  - name: PUID
-    value: 1000
-  - name: PGID
-    value: 1000
+  TZ: America/New_York
+  PUID: 1000
+  PGID: 1000
+
+envSecrets: {}
+#   name: secret
 
 persistence:
   enabled: true
@@ -133,7 +139,8 @@ affinity:
       - matchExpressions:
         - key: app.env/servarr
           operator: In
-          values: 'true'
+          values: 
+          - 'true'
     preferredDuringSchedulingIgnoredDuringExecution:
     - weight: 1
       preference:

@@ -13,10 +13,21 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Install readme-generator-for-helm
+        run: npm install -g @bitnami/readme-generator-for-helm
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      
+      - name: Execute readme-generator-for-helm
+        run: |
+          charts_dirs_changed=($(find charts/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n'))
+          for chart in ${charts_dirs_changed}; do
+            echo "Updating README.md for ${chart}"
+            readme-generator --values "charts/${chart}/values.yaml" --readme "charts/${chart}/README.md" --schema "/tmp/schema.json"
+          done
 
       - name: Configure Git
         run: |
