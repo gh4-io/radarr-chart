@@ -22,7 +22,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-
 ## @skip serviceAccount
 serviceAccount:
   # Specifies whether a service account should be created
@@ -46,8 +45,8 @@ persistence:
   enabled: true
   annotations: {}
   # labels: {}
-  ## @param persistence.existingClaim [string, nullable] 
-  ## @extra
+  ## @param persistence.existingClaim [string, nullable] Name of exiting claim
+  ## @extra Claim type should be PVC.
   existingClaim: null
   accessMode: ReadWriteOnce
   size: 2Gi
