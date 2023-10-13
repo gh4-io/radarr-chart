@@ -46,7 +46,8 @@ persistence:
   enabled: true
   annotations: {}
   # labels: {}
-
+  ## @param exitingClaim [string, nullable] 
+  ## @extra
   existingClaim: null
   accessMode: ReadWriteOnce
   size: 2Gi
