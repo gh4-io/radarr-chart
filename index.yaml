@@ -5,6 +5,25 @@ entries:
       app: radarr
     apiVersion: v2
     appVersion: nightly
+    created: "2023-10-13T19:12:31.292994421Z"
+    description: Radarr is a movie collection manager for Usenet and BitTorrent users.
+      It can monitor multiple RSS feeds for new movies and will interface with clients
+      and indexers to grab, sort, and rename them. It can also be configured to automatically
+      upgrade the quality of existing files in the library when a better quality format
+      becomes available. Note that only one type of a given movie is supported. If
+      you want both an 4k version and 1080p version of a given movie you will need
+      multiple instances.
+    digest: 0d0f5379e90755ce78489814c9401691f41a63424e3362d9fd5b1d92e1eabf54
+    icon: https://raw.githubusercontent.com/Radarr/Radarr/develop/Logo/256.png
+    name: Radarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/Radarr-0.1.8/Radarr-0.1.8.tgz
+    version: 0.1.8
+  - annotations:
+      app: radarr
+    apiVersion: v2
+    appVersion: nightly
     created: "2023-10-13T18:47:30.360882201Z"
     description: Radarr is a movie collection manager for Usenet and BitTorrent users.
       It can monitor multiple RSS feeds for new movies and will interface with clients
@@ -101,6 +120,25 @@ entries:
       app: sonarr
     apiVersion: v2
     appVersion: develop
+    created: "2023-10-13T19:12:31.427357478Z"
+    description: sonarr is a movie collection manager for Usenet and BitTorrent users.
+      It can monitor multiple RSS feeds for new movies and will interface with clients
+      and indexers to grab, sort, and rename them. It can also be configured to automatically
+      upgrade the quality of existing files in the library when a better quality format
+      becomes available. Note that only one type of a given movie is supported. If
+      you want both an 4k version and 1080p version of a given movie you will need
+      multiple instances.
+    digest: 5a3ee5b22dfc4c69f4dd0a6acd5648df82d0fb67319866d31e377ef9c657cfbe
+    icon: https://raw.githubusercontent.com/sonarr/sonarr/develop/Logo/256.png
+    name: Sonarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/Sonarr-0.1.8/Sonarr-0.1.8.tgz
+    version: 0.1.8
+  - annotations:
+      app: sonarr
+    apiVersion: v2
+    appVersion: develop
     created: "2023-10-13T18:47:30.592538914Z"
     description: sonarr is a movie collection manager for Usenet and BitTorrent users.
       It can monitor multiple RSS feeds for new movies and will interface with clients
@@ -151,4 +189,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.6/sonarr-0.1.6.tgz
     version: 0.1.6
-generated: "2023-10-13T18:47:30.592564514Z"
+generated: "2023-10-13T19:12:31.427381778Z"
