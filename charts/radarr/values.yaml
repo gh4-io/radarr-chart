@@ -24,9 +24,12 @@ serviceAccount:
   name: ""
 
 env:
-  TZ: America/New_York
-  PUID: 1000
-  PGID: 1000
+  - name: TZ
+    value: America/New_York
+  - name: PUID
+    value: 1000
+  - name: PGID
+    value: 1000
 
 persistence:
   enabled: true
