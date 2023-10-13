@@ -27,6 +27,8 @@ jobs:
           for chart in ${charts_dirs_changed}; do
             echo "Updating README.md for ${chart}"
             cd $GITHUB_WORKSPACE/charts/${chart}
+            if [[ ! -f README.md ]]; then
+              echo "## Paramerers" > README.md
             readme-generator -v values.yaml -r README.md --schema "/tmp/schema.json"
           done
 
