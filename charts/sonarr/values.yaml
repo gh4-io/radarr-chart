@@ -128,10 +128,10 @@ resources: {}
 #   cpu: 100m
 #   memory: 128Mi
 
-## 'volumePermissions' init container parameters
-## Changes the owner and group of the persistent volume mount point to runAsUser:fsGroup values
-##   based on the podSecurityContext/containerSecurityContext parameters
-##
+# 'volumePermissions' init container parameters
+# Changes the owner and group of the persistent volume mount point to runAsUser:fsGroup values
+#   based on the podSecurityContext/containerSecurityContext parameters
+#
 volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
   ##
