@@ -22,6 +22,7 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+## @skip serviceAccount
 serviceAccount:
   # Specifies whether a service account should be created
   create: false
@@ -63,15 +64,15 @@ media:
   existingClaim: nfs-storage
   path: "/media"
 
-## @skip podAnnotation
+## @skip podAnnotations
 podAnnotations: {}
 
 
-## @skip podSecurityContex
+## @skip podSecurityContext
 podSecurityContext: {}
 # fsGroup: 2000
 
-## @skip securityContex
+## @skip securityContext
 securityContext: {}
 # capabilities:
 #   drop:
