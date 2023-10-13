@@ -32,7 +32,7 @@ jobs:
             cd $GITHUB_WORKSPACE/charts/${chart}
             if [[ ! -f $rmf ]]; then
               echo "$r_param" > $rmf
-            elif [[ grep "$r_param" $rmf]]; then
+            elif ! $(grep "$r_param" $rmf); then
               echo "No $r_param found in the $rmf file. This must be done first"
               exit 1
             fi
