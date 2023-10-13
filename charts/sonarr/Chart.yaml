@@ -1,9 +1,9 @@
 apiVersion: v2
-name: sonarr
+name: Sonarr
 annotations:
   app: sonarr
 description: Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. 
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: "develop"
 icon: https://raw.githubusercontent.com/Sonarr/Sonarr/develop/Logo/256.png
