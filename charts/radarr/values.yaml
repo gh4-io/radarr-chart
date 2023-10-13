@@ -45,7 +45,7 @@ persistence:
   enabled: true
   annotations: {}
   # labels: {}
-  ## @param exitingClaim [string, nullable] 
+  ## @param persistence.exitingClaim [string, nullable] 
   ## @extra
   existingClaim: null
   accessMode: ReadWriteOnce
