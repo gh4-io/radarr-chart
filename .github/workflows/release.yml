@@ -27,7 +27,7 @@ jobs:
           for chart in ${charts_dirs_changed}; do
             echo "Updating README.md for ${chart}"
             cd $GITHUB_WORKSPACE/charts/${chart}
-            readme-generator --schema "/tmp/schema.json"
+            readme-generator -v values.yaml -r README.md --schema "/tmp/schema.json"
           done
 
       - name: Configure Git
