@@ -82,7 +82,7 @@ spec:
         command:
           - sh
           - '-c'
-          - {{ printf "chown -R %d:%d /config" ( .Values.env.PUID | default 1000 ) ( .Values.env.PGID | default 1000 ) }}
+          - {{ printf "chown -R %s:%s /config" ( .Values.env.PUID | default "1000" ) ( .Values.env.PGID | default "1000" ) }}
         image: busybox
         imagePullPolicy: IfNotPresent
         resources: {}

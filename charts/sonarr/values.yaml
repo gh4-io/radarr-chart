@@ -36,8 +36,8 @@ serviceAccount:
 ## @skip env
 env:
   TZ: America/New_York
-  PUID: 1000
-  PGID: 1000
+  PUID: "1000"
+  PGID: "1000"
 ## @skip envSecrets
 envSecrets: {}
 #   name: secret
