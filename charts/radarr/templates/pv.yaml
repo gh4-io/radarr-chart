@@ -12,10 +12,10 @@ metadata:
     {{- include "radarr.labels" . | nindent 4 }}
     app.kubernetes.io/component: pv
 spec:
-  storageClassName: {{ .Values.persistence.storageClassName | default "local-path" }}
+  storageClassName: {{ .Values.persistence.storageClassName | default "microk8s-hostpath" }}
   capacity:
     storage: {{ .Values.persistence.size }}
-  volumeMode: {{ .Values.persistence.volumeMode | default "HostPath" }}
+  volumeMode: {{ .Values.persistence.volumeMode | default "Filesystem" }}
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: {{ .Values.persistence.reclaimPolicy | default "Retain" }}

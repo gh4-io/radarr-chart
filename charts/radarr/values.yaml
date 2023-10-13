@@ -45,8 +45,8 @@ persistence:
   enabled: true
   annotations: {}
   # labels: {}
-  ## @param persistence.existingClaim [string, nullable] 
-  ## @extra
+  ## @param persistence.existingClaim [string, nullable] Name of exiting claim
+  ## @extra Claim type should be PVC.
   existingClaim: null
   accessMode: ReadWriteOnce
   size: 2Gi
