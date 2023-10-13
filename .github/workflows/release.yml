@@ -28,7 +28,11 @@ jobs:
             echo "Updating README.md for ${chart}"
             cd $GITHUB_WORKSPACE/charts/${chart}
             if [[ ! -f README.md ]]; then
-              echo "## Paramerers" > README.md
+              echo "## Parameters" > README.md
+            else
+              echo 'No "## Parameters" found in the README.md file. This must be done first'
+              exit 1
+            fi
             readme-generator -v values.yaml -r README.md --schema "/tmp/schema.json"
           done
 
