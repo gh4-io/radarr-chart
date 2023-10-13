@@ -33,10 +33,20 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
-          {{- with .Values.env }}
-          env:
-          {{- toYaml . | nindent 12 }}
-          {{- end }}
+        {{- if or $.Values.env $.Values.envSecrets }}
+        env:
+        {{- range $key, $value := $.Values.env }}
+          - name: {{ $key }}
+            value: {{ $value | quote }}
+        {{- end }}
+        {{- range $key, $secret := $.Values.envSecrets }}
+          - name: {{ $key }}
+            valueFrom:
+            secretKeyRef:
+            name: {{ $secret }}
+            key: {{ $key | quote }}
+        {{- end }}
+        {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
