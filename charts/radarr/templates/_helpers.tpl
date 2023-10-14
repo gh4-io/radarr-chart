@@ -72,5 +72,5 @@ Create the name of the service account to use
 {{- end }}
 
 {{- define "radarr.pvName" -}}
-{{ printf "%s-%s-pv" .Release.Namespace ( include "sonarr.fullname" . ) }}
+{{ printf "%s-%s-pv" .Release.Namespace ( include "radarr.fullname" . ) }}
 {{- end }}
