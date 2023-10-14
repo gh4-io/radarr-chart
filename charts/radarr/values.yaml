@@ -156,23 +156,23 @@ tolerations:
 
 ## @skip affinity
 affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: app.env/servarr
-          operator: In
-          values: 
-          - 'true'
-    preferredDuringSchedulingIgnoredDuringExecution:
-    - weight: 1
-      preference:
-        matchExpressions:
-        - key: app.instance/radarr
-          operator: In
-          values:
-          - radarr2k
-        - key: app.instance/radarr
-          operator: In
-          values:
-          - all
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: app.env/servarr
+            operator: In
+            values: 
+            - 'true'
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: app.instance/radarr
+            operator: In
+            values:
+            - radarr2k
+          - key: app.instance/radarr
+            operator: In
+            values:
+            - all

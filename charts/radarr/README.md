@@ -32,7 +32,7 @@ Radarr will automaticly generate a sqlite3 database and `config.xml` in `/config
 To install the chart with the release name `my-release`:
 
 ```console
-helm install my-release https://github.com/gh4-io/thin-client-charts/radarr-0.1.9.tgz
+helm install my-release https://github.com/gh4-io/thin-client-charts/releases/download/radarr-0.1.9/radarr-0.1.9.tgz
 ```
 
 These commands deploy Tomcat on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.

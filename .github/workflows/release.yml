@@ -24,8 +24,6 @@ jobs:
       
       - name: Execute readme-generator-for-helm
         run: |
-          set -e
-          set -x
           r_param="## Parameters"
           rmf="README.md"
           charts_dirs_changed=($(find charts/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n'))

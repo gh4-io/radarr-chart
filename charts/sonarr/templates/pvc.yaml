@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "sonarr.fullname" . -}}-config-pvc
+  name: {{ printf "%s-config-pvc" ( include "sonarr.fullname" . ) }}
   namespace: {{ .Release.Namespace }}
   {{- with .Values.persistence.annotations  }}
   annotations:
