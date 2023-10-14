@@ -22,4 +22,13 @@ spec:
   hostPath: 
     path: {{ printf "%s%s" ( include "radarr.volumePath" . ) ( include "radarr.volumeName" . ) | quote }}
     type: {{ .Values.persistence.volumeType | default "DirectoryOrCreate" }}
+  {{- if .Values.affinity.nodeAffinity }}
+  nodeAffinity:
+    required:
+    {{- with .Values.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms }}
+      nodeSelectorTerms:
+      {{- toYaml . | nindent 8 }}
+    {{- end }}
+  {{-end }}
 {{- end }}
+  
