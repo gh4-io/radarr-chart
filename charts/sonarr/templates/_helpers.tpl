@@ -64,9 +64,13 @@ Create the name of the service account to use
 {{- end }}
 
 {{- define "sonarr.volumeName" -}}
-{{- .Values.persistence.volumeName | default ( printf "%s-pv" ( include "sonarr.fullname" . ))  }}
+{{- .Values.persistence.volumeName | default ( printf "%s-%s-pv" ( .Release.Namespace ) ( include "sonarr.fullname" . ))  }}
 {{- end }}
 
 {{- define "sonarr.volumePath" -}}
-{{- .Values.persistence.volumePath | default "/var/snap/microk8s/common/default-storage/" }}
+{{ printf "%s-%s-pv" .Release.Namespace ( include "radarr.fullname" . ) }}
+{{- end }}
+
+{{- define "sonarr.pvName" -}}
+{{ printf "%s-%s-pv" .Release.Namespace ( include "sonarr.fullname" . ) }}
 {{- end }}

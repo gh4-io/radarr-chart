@@ -25,5 +25,5 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass | default "microk8s-hostpath" }}"
   {{- end }}
   {{- end }}
-  volumeName: {{ printf "%s-pv" ( include "sonarr.fullname" . ) }}
+  volumeName: {{ include "sonarr.pvName" . }}
 {{- end }}

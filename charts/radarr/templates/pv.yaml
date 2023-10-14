@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ printf "%s-%s-pv" .Release.Namespace ( include "radarr.fullname" . ) }}
+  name: {{ include "radarr.pvName" . }}
   namespace: {{ .Release.Namespace }}
   {{- with .Values.persistence.annotations  }}
   annotations:
