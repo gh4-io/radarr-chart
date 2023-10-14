@@ -11,7 +11,7 @@ keywords:
   - management
   - web
   - http
-version: 0.1.11
+version: 0.1.12
 appVersion: "nightly"
 icon: https://raw.githubusercontent.com/Radarr/Radarr/develop/Logo/256.png
 home: https://radarr.video/
