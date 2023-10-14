@@ -29,5 +29,5 @@ spec:
       nodeSelectorTerms:
       {{- toYaml . | nindent 8 }}
     {{- end }}
-  {{-end }}
+  {{- end }}
 {{- end }}
