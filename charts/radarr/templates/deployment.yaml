@@ -107,7 +107,7 @@ spec:
         {{- if .Values.persistence.enabled }}
         - name: config
           persistentVolumeClaim:
-            claimName: {{ default ( printf "%s-config-pvc" ( include "radarr.fullname" . )) .Values.persistence.existingClaim }}
+            claimName: {{ default ( include "radarr.pvcName" . ) .Values.persistence.existingClaim }}
         {{- end }}
         {{- if .Values.media.enabled }}
         - name: media
