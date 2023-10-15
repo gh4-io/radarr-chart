@@ -71,7 +71,7 @@ spec:
           {{- if .Values.persistence.enabled }}
           - mountPath: {{ .Values.persistence.path | default "/config" }}
             name: config
-          {{- end -}}
+          {{- end }}
           {{- if .Values.media.enabled }}
           - mountPath: {{ .Values.media.path | default "/media" }}
             name: media
@@ -114,8 +114,8 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Values.media.existingClaim }}
         {{- end }}
-        {{- include "radarr.volumeConfigMap" . | nindent 8 }}
         {{- end }}
+        {{- include "radarr.volumeConfigMap" . | nindent 8 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
