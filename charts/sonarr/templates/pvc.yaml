@@ -2,12 +2,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ printf "%s-config-pvc" ( include "sonarr.fullname" . ) }}
+  name: {{ include "sonarr.pvcName" . }}
   namespace: {{ .Release.Namespace }}
   {{- with .Values.persistence.annotations  }}
   annotations:
-    helm.sh/resource-policy": keep
-    {{ toYaml . | indent 4 }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
   labels:
     {{- include "sonarr.labels" . | nindent 4 }}

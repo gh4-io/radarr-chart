@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   {{- with .Values.persistence.annotations  }}
   annotations:
-    {{ toYaml . | indent 4 }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
   labels:
     {{- include "sonarr.labels" . | nindent 4 }}
@@ -31,3 +31,4 @@ spec:
     {{- end }}
   {{- end }}
 {{- end }}
+  

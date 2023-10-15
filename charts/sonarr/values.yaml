@@ -13,7 +13,7 @@ image:
   repository: lscr.io/linuxserver/sonarr
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "develop"
+  tag: "nightly"
 
 ## @skip imagePullSecrets
 ## @skip nameOverride
@@ -33,16 +33,13 @@ serviceAccount:
   name: ""
 ## @section Env
 ## @skip env
-env:
-  TZ: America/New_York
-  PUID: "1000"
-  PGID: "1000"
+env: {}
 ## @skip envSecrets
 envSecrets: {}
 #   name: secret
 ## @skip persistence
 persistence:
-  enabled: true
+  enabled: false
   annotations: {}
   # labels: {}
   ## @param persistence.existingClaim [string, nullable] Name of exiting claim
@@ -55,18 +52,31 @@ persistence:
   # volumePath: "/storage/"
   # volumeType: DirectoryOrCreate
 
+## @skip configMap
+configMap: {}
+  # ## @param configMap.enabled
+  # enabled: true 
+  # create:
+  #   name: "myConfig"
+  #   data:
+  #     - |
+  #       some data here
+  #     - key: value
+  # existingConfigMap: {}
 
-## @section Media
+
+
 ## @param media.enabled Enables root media folder
 ## @param media.existingClaim [string] Name of the existing claim
 ## @param media.path [string] Path to root media folder
 media:
-  enabled: true
-  existingClaim: nfs-storage
-  path: "/media"
+  enabled: false
+  existingClaim: ""
 
 ## @skip podAnnotations
-podAnnotations: {}
+podAnnotations:
+  servarrUsr: sonarr
+  servarrPwd: sonarr
 
 
 ## @skip podSecurityContext
@@ -75,12 +85,12 @@ podSecurityContext: {}
 
 ## @skip securityContext
 securityContext: {}
-# capabilities:
-#   drop:
-#   - ALL
-# readOnlyRootFilesystem: true
-# runAsNonRoot: true
-# runAsUser: 1000
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
 
 
 ## @skip service
@@ -134,8 +144,10 @@ resources: {}
 #
 volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
-  ##
+  ## @param volumePermissions.extraCommands
   enabled: false
+  extraCommands: []
+
 ## @skip autoscaling
 autoscaling:
   enabled: false
@@ -148,31 +160,7 @@ autoscaling:
 nodeSelector: {}
 
 ## @skip tolerations
-tolerations:
-- key: app.env/servarr
-  value: 'false'
-  effect: NoSchedule
-  operator: Equal
+tolerations: {}
 
 ## @skip affinity
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: app.env/servarr
-          operator: In
-          values: 
-          - 'true'
-    preferredDuringSchedulingIgnoredDuringExecution:
-    - weight: 1
-      preference:
-        matchExpressions:
-        - key: app.instance/sonarr
-          operator: In
-          values:
-          - sonarr2k
-        - key: app.instance/sonarr
-          operator: In
-          values:
-          - all
+affinity: {}

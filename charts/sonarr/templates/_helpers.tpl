@@ -74,3 +74,7 @@ Create the name of the service account to use
 {{- define "sonarr.pvName" -}}
 {{ printf "%s-%s-pv" .Release.Namespace ( include "sonarr.fullname" . ) }}
 {{- end }}
+
+{{- define "sonarr.pvcName" -}}
+{{ default (printf "%s-pvc" ( include "sonarr.fullname" . )) .Values.persistence.existingClaim }}
+{{- end }}
