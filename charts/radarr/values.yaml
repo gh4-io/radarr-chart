@@ -55,8 +55,25 @@ persistence:
   # volumePath: "/storage/"
   # volumeType: DirectoryOrCreate
 
+## @skip configMap
+configMap:
+  ## @param configMap.enabled
+  # enabled: true 
+  # create:
+  #   name: "myConfig"
+  #   data:
+  #     - |
+  #       some data here
+  #     - key: value
+  existingConfigMap:
+    radarr-config:
+      path: /tmp/config.xml
+      subPath: config.xml
+      mntName: cm
+      pod: init
 
-## @section Media
+
+
 ## @param media.enabled Enables root media folder
 ## @param media.existingClaim [string] Name of the existing claim
 ## @param media.path [string] Path to root media folder
@@ -66,7 +83,9 @@ media:
   path: "/media"
 
 ## @skip podAnnotations
-podAnnotations: {}
+podAnnotations:
+  servarrUsr: radarr
+  servarrPwd: radarr
 
 
 ## @skip podSecurityContext
@@ -75,12 +94,12 @@ podSecurityContext: {}
 
 ## @skip securityContext
 securityContext: {}
-# capabilities:
-#   drop:
-#   - ALL
-# readOnlyRootFilesystem: true
-# runAsNonRoot: true
-# runAsUser: 1000
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
 
 
 ## @skip service
@@ -134,8 +153,11 @@ resources: {}
 #
 volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
-  ##
-  enabled: false
+  ## @param exrtaCommands
+  enabled: true
+  extraCommands:
+    - '[[ ! -s /config/config.xml || ! -f /config/config.xml ]] && echo "Config File Empty..." && echo /tmp/config.xml > /config/config.xml'
+
 ## @skip autoscaling
 autoscaling:
   enabled: false

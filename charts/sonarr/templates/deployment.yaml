@@ -102,7 +102,7 @@ spec:
         {{- if .Values.persistence.enabled }}
         - name: config
           persistentVolumeClaim:
-            claimName: {{ default ( printf "%s-pvc" ( include "sonarr.fullname" . )) .Values.persistence.existingClaim }}
+            claimName: {{ default ( printf "%s-config-pvc" ( include "sonarr.fullname" . )) .Values.persistence.existingClaim }}
         {{- end }}
         {{- if .Values.media.enabled }}
         - name: media
