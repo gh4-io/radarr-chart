@@ -57,7 +57,7 @@ persistence:
 
 ## @skip configMap
 configMap:
-  ## @param configMap.enabled
+  # ## @param configMap.enabled
   # enabled: true 
   # create:
   #   name: "myConfig"
@@ -153,7 +153,7 @@ resources: {}
 #
 volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
-  ## @param exrtaCommands
+  ## @param extraCommands
   enabled: true
   extraCommands:
     - '[[ ! -s /config/config.xml || ! -f /config/config.xml ]] && echo "Config File Empty..." && echo /tmp/config.xml > /config/config.xml'
