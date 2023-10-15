@@ -153,7 +153,7 @@ resources: {}
 #
 volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
-  ## @param extraCommands
+  ## @param volumePermissions.extraCommands
   enabled: true
   extraCommands:
     - '[[ ! -s /config/config.xml || ! -f /config/config.xml ]] && echo "Config File Empty..." && echo /tmp/config.xml > /config/config.xml'
