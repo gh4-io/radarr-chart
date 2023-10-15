@@ -11,7 +11,7 @@ keywords:
   - management
   - web
   - http
-version: 0.1.22
+version: 0.1.23
 appVersion: "nightly"
 icon: https://raw.githubusercontent.com/Sonarr/Sonarr/develop/Logo/256.png
 home: https://sonarr.video/

@@ -11,10 +11,11 @@ keywords:
   - management
   - web
   - http
-version: 0.1.22
+version: 0.1.23
 appVersion: "nightly"
 icon: https://raw.githubusercontent.com/Radarr/Radarr/develop/Logo/256.png
 home: https://radarr.video/
 sources: 
+  - https://github.com/Radarr/Radarr
   - https://github.com/gh4-io/thin-client-charts
   - https://wiki.servarr.com/radarr
