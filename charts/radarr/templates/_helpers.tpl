@@ -76,5 +76,5 @@ Create the name of the service account to use
 {{- end }}
 
 {{- define "radarr.pvcName" -}}
-{{ printf "%s-pvc" ( include "radarr.fullname" . ) }}
+{{ default (printf "%s-pvc" ( include "radarr.fullname" . )) .Values.persistence.existingClaim }}
 {{- end }}
