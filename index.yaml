@@ -5,6 +5,36 @@ entries:
       app: radarr
     apiVersion: v2
     appVersion: nightly
+    created: "2023-10-15T00:30:53.353359214Z"
+    description: Radarr is a movie collection manager for Usenet and BitTorrent users.
+      It can monitor multiple RSS feeds for new movies and will interface with clients
+      and indexers to grab, sort, and rename them. It can also be configured to automatically
+      upgrade the quality of existing files in the library when a better quality format
+      becomes available. Note that only one type of a given movie is supported. If
+      you want both an 4k version and 1080p version of a given movie you will need
+      multiple instances.
+    digest: 372876418eceb5b7ef4b45105c824e4e68005e7402cc2c90a48b8a1dd8274365
+    home: https://radarr.video/
+    icon: https://raw.githubusercontent.com/Radarr/Radarr/develop/Logo/256.png
+    keywords:
+    - servarr
+    - radarr
+    - movies
+    - management
+    - web
+    - http
+    name: radarr
+    sources:
+    - https://github.com/gh4-io/thin-client-charts
+    - https://wiki.servarr.com/radarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/radarr-0.1.17/radarr-0.1.17.tgz
+    version: 0.1.17
+  - annotations:
+      app: radarr
+    apiVersion: v2
+    appVersion: nightly
     created: "2023-10-14T04:12:33.173917064Z"
     description: Radarr is a movie collection manager for Usenet and BitTorrent users.
       It can monitor multiple RSS feeds for new movies and will interface with clients
@@ -186,6 +216,33 @@ entries:
       app: sonarr
     apiVersion: v2
     appVersion: develop
+    created: "2023-10-15T00:30:53.486820812Z"
+    description: Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple
+      RSS feeds for new episodes of your favorite shows and will grab, sort and rename
+      them. It can also be configured to automatically upgrade the quality of files
+      already downloaded when a better quality format becomes available.
+    digest: a16575d3ea50afc3d113656d45403bcff1bff64de963ec1cde24f43de6d29755
+    home: https://sonarr.video/
+    icon: https://raw.githubusercontent.com/Sonarr/Sonarr/develop/Logo/256.png
+    keywords:
+    - servarr
+    - sonarr
+    - series
+    - management
+    - web
+    - http
+    name: sonarr
+    sources:
+    - https://github.com/gh4-io/thin-client-charts
+    - https://wiki.servarr.com/sonarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.16/sonarr-0.1.16.tgz
+    version: 0.1.16
+  - annotations:
+      app: sonarr
+    apiVersion: v2
+    appVersion: develop
     created: "2023-10-14T04:12:33.34622786Z"
     description: Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple
       RSS feeds for new episodes of your favorite shows and will grab, sort and rename
@@ -356,4 +413,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.9/sonarr-0.1.9.tgz
     version: 0.1.9
-generated: "2023-10-14T04:12:33.34626546Z"
+generated: "2023-10-15T00:30:53.486866413Z"
