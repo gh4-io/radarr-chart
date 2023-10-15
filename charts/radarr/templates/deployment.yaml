@@ -67,7 +67,7 @@ spec:
           {{- toYaml .Values.resources | nindent 12 }}
         {{- if or .Values.persistence.enabled .Values.media.enabled }}
         volumeMounts:
-          {{- include "radarr.primaryConfigMap" . | indent 10 }}
+          {{- include "radarr.primaryConfigMap" . | nindent 10 }}
           {{- if .Values.persistence.enabled }}
           - mountPath: {{ .Values.persistence.path | default "/config" }}
             name: config
@@ -98,7 +98,7 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
-          {{- include "radarr.initConfigMap" . | indent 10 }}
+          {{- include "radarr.initConfigMap" . | nindent 10 }}
           - mountPath: /config
             name: config
       {{- end }}
@@ -114,7 +114,7 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Values.media.existingClaim }}
         {{- end }}
-        {{- include "radarr.volumeConfigMap" . | indent 8 }}
+        {{- include "radarr.volumeConfigMap" . | nindent 8 }}
         {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
