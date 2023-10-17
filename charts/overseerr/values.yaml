@@ -1,4 +1,4 @@
-# Default values for radarr.
+# Default values for overseerr.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -10,10 +10,10 @@ replicaCount: 1
 ## @param image.pullPolicy
 ## @param image.tag docker image tag
 image:
-  repository: lscr.io/linuxserver/radarr
+  repository: lscr.io/linuxserver/overseerr
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "nightly"
+  tag: "latest"
 
 ## @skip imagePullSecrets
 ## @skip nameOverride
@@ -48,45 +48,35 @@ persistence:
   accessMode: ReadWriteOnce
   size: 2Gi
   # reclaimPolicy: Retain
-  # volumeName: radarr-config
+  # volumeName: overseerr-config
   # volumePath: "/storage/"
   # volumeType: DirectoryOrCreate
 
-## @param configMap
-##
+## @skip configMap
 configMap: {}
-  ## @param configMap.enabled
-  ##
-  ## enabled: true 
-  ## create:
-  ##   name: "myConfig"
-  ##   data:
-  ##     - |
-  ##       some data here
-  ##     - key: value
-
-  ## @param configMap.existingConfigMap
-  ##
-  existingConfigMap: {}
-  ## - exampleConfigMap:
-  ##    mntName: myConfig
-  ##    path: /config
-  ##    pod: primary
-  ##    subpath: script.sh
+  # ## @param configMap.enabled
+  # enabled: true 
+  # create:
+  #   name: "myConfig"
+  #   data:
+  #     - |
+  #       some data here
+  #     - key: value
+  # existingConfigMap: {}
 
 
 
 ## @param media.enabled Enables root media folder
-## @param media.existingClaim [string] Name of the existing claim
-## @param media.path [string] Path to root media folder
+## @param media.existingClaim Name of the existing claim
+## @param media.path Path to root media folder
 media:
   enabled: false
   existingClaim: ""
 
 ## @skip podAnnotations
 podAnnotations:
-  servarrUsr: radarr
-  servarrPwd: radarr
+  servarrUsr: overseerr
+  servarrPwd: overseerr
 
 
 ## @skip podSecurityContext
@@ -107,7 +97,7 @@ securityContext: {}
 service:
   enabled: true
   type: ClusterIP
-  port: 7878
+  port: 5055
 
 
 ## @skip strategy

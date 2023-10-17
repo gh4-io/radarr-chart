@@ -1,17 +1,15 @@
-{{- $mypv := (lookup "v1" "pv" ".Release.Namespace" ( include "radarr.pvName" .) ) }}
-{{- if not $mypv }}
 {{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ include "radarr.pvName" . }}
+  name: {{ include "overseerr.pvName" . }}
   namespace: {{ .Release.Namespace }}
   {{- with .Values.persistence.annotations  }}
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
   labels:
-    {{- include "radarr.labels" . | nindent 4 }}
+    {{- include "overseerr.labels" . | nindent 4 }}
     app.kubernetes.io/component: pv
 spec:
   storageClassName: {{ .Values.persistence.storageClassName | default "microk8s-hostpath" }}
@@ -22,7 +20,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: {{ .Values.persistence.reclaimPolicy | default "Retain" }}
   hostPath: 
-    path: {{ printf "%s%s" ( include "radarr.volumePath" . ) ( include "radarr.volumeName" . ) | quote }}
+    path: {{ printf "%s%s" ( include "overseerr.volumePath" . ) ( include "overseerr.volumeName" . ) | quote }}
     type: {{ .Values.persistence.volumeType | default "DirectoryOrCreate" }}
   {{- if .Values.affinity.nodeAffinity }}
   nodeAffinity:
@@ -32,6 +30,5 @@ spec:
       {{- toYaml . | nindent 8 }}
     {{- end }}
   {{- end }}
-{{- end }}
 {{- end }}
   
