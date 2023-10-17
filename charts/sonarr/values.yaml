@@ -68,7 +68,7 @@ configMap: {}
 
 ## @param media.enabled Enables root media folder
 ## @param media.existingClaim [string] Name of the existing claim
-## @param media.path [string] Path to root media folder
+## @extra media.path [string] Path to root media folder
 media:
   enabled: false
   existingClaim: ""
