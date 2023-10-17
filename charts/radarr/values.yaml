@@ -67,7 +67,7 @@ configMap: {}
 
   ## @param configMap.existingConfigMap
   ##
-  existingConfigMap: {}
+  ## existingConfigMap: {}
   ## - exampleConfigMap:
   ##    mntName: myConfig
   ##    path: /config
