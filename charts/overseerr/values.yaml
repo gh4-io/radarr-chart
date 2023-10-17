@@ -31,10 +31,12 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-## @section Env
+
 ## @skip env
+##
 env: {}
 ## @skip envSecrets
+##
 envSecrets: {}
 #   name: secret
 ## @skip persistence
@@ -68,7 +70,7 @@ configMap: {}
 
 ## @param media.enabled Enables root media folder
 ## @param media.existingClaim Name of the existing claim
-## @param media.path Path to root media folder
+## @extra media.path Path to root media folder
 media:
   enabled: false
   existingClaim: ""
