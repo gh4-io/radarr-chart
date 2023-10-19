@@ -54,10 +54,10 @@ persistence:
 
 ## @param configMap
 ##
-configMap: {}
+configMap:
   ## @param configMap.enabled
   ##
-  ## enabled: true 
+  enabled: false 
   ## create:
   ##   name: "myConfig"
   ##   data:
