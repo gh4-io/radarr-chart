@@ -52,8 +52,7 @@ persistence:
   # volumePath: "/storage/"
   # volumeType: DirectoryOrCreate
 
-## @param configMap
-##
+
 configMap:
   ## @param configMap.enabled
   ##
