@@ -65,7 +65,7 @@ configMap: {}
   ##       some data here
   ##     - key: value
 
-  ## @param configMap.existingConfigMap
+  ## @extra configMap.existingConfigMap
   ##
   ## existingConfigMap: {}
   ## - exampleConfigMap:
