@@ -1,5 +1,37 @@
 apiVersion: v1
 entries:
+  Readarr:
+  - annotations:
+      app: readarr
+    apiVersion: v2
+    appVersion: latest
+    created: "2023-10-20T22:41:22.038692627Z"
+    dependencies:
+    - name: common
+      repository: https://gh4-io.github.io/common-library-chart/
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: f72b9a0ed735d9ffa88a41dfc0f7de70928ba27ec6baca3f260e107ca28955ba
+    home: https://readarr.com/
+    icon: https://raw.githubusercontent.com/Readarr/Readarr/develop/Logo/256.png
+    keywords:
+    - servarr
+    - readarr
+    - books
+    - magazines
+    - reading
+    - management
+    - web
+    - http
+    name: Readarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/readarr
+    - https://github.com/gh4-io/thin-client-charts
+    - https://github.com/Readarr/Readarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/Readarr-0.1.0/Readarr-0.1.0.tgz
+    version: 0.1.0
   overseerr:
   - annotations:
       app: overseerr
@@ -30,6 +62,37 @@ entries:
     - https://github.com/gh4-io/thin-client-charts/releases/download/overseerr-0.1.0/overseerr-0.1.0.tgz
     version: 0.1.0
   prowlarr:
+  - annotations:
+      app: prowlarr
+    apiVersion: v2
+    appVersion: 1.33.x
+    created: "2023-10-20T22:41:22.391861523Z"
+    description: Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs
+      base stack to integrate with your various PVR apps. Prowlarr supports both Torrent
+      Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr,
+      Lidarr, and Readarr offering complete management of your indexers with no per
+      app Indexer setup required (we do it all).
+    digest: 144e5d15fe430937187964719f74262c0ce79e5d6b9f9512f723285c3c6cd03d
+    home: https://prowlarr.com/
+    icon: https://raw.githubusercontent.com/Prowlarr/Prowlarr/develop/Logo/256.png
+    keywords:
+    - servarr
+    - prowlarr
+    - movies
+    - series
+    - management
+    - web
+    - http
+    name: prowlarr
+    sources:
+    - https://github.com/Prowlarr/Prowlarr
+    - https://github.com/gh4-io/thin-client-charts
+    - https://wiki.servarr.com/prowlarr
+    - https://docs.linuxserver.io/images/docker-prowlarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/prowlarr-0.1.3/prowlarr-0.1.3.tgz
+    version: 0.1.3
   - annotations:
       app: prowlarr
     apiVersion: v2
@@ -804,4 +867,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.9/sonarr-0.1.9.tgz
     version: 0.1.9
-generated: "2023-10-19T03:12:58.669212336Z"
+generated: "2023-10-20T22:41:22.392029526Z"
