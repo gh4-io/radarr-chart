@@ -1,0 +1,3 @@
+{{- include "common.hpa" (list . "readarr.hpa") -}}
+{{- define "readarr.hpa" -}}
+{{- end -}}

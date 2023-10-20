@@ -1,0 +1,3 @@
+{{- include "common.deployment" (list . "readarr.deployment") -}}
+{{- define "readarr.deployment" -}}
+{{- end -}}

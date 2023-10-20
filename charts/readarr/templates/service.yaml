@@ -1,0 +1,3 @@
+{{- include "common.service" (list . "readarr.service") -}}
+{{- define "readarr.service" -}}
+{{- end -}}
