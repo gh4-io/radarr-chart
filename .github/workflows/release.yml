@@ -47,6 +47,11 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v3
 
+      # - name: Add Helm dependency repos
+      #   run: |
+      #     helm repo add common https://gh4-io.github.io/common-library-chart/
+      #     helm repo update
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         with:

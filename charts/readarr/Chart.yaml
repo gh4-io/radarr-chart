@@ -46,5 +46,5 @@ icon: https://raw.githubusercontent.com/Readarr/Readarr/develop/Logo/256.png
 appVersion: "latest"
 dependencies:
   - name: common
-    version: 0.0.1
+    version: 0.1.0
     repository: https://gh4-io.github.io/common-library-chart/
