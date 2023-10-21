@@ -1,3 +1,6 @@
+{{- if (.Values.ingress.enabled | default false) -}}
 {{- include "common.ingress" (list . "readarr.ingress") -}}
+{{- end -}}
+
 {{- define "readarr.ingress" -}}
 {{- end -}}

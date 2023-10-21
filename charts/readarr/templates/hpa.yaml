@@ -1,3 +1,6 @@
+{{- if (.Values.autoscaling.enabled | default false) -}}
 {{- include "common.hpa" (list . "readarr.hpa") -}}
+{{- end -}}
+
 {{- define "readarr.hpa" -}}
 {{- end -}}

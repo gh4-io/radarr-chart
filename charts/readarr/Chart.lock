@@ -1,0 +1,6 @@
+dependencies:
+- name: common
+  repository: https://gh4-io.github.io/common-library-chart/
+  version: 0.1.0
+digest: sha256:9482b9aff6fcb2516f1ba2dd18fe6a607d3fcfc38c61701b657f25a58e1e27d9
+generated: "2023-10-20T19:10:22.9189638-04:00"
