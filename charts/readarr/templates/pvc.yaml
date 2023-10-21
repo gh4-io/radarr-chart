@@ -1,0 +1,6 @@
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+{{- include "common.pv" (list . "readarr.pvc") -}}
+{{- end -}}
+
+{{- define "readarr.pvc" -}}
+{{- end -}}
