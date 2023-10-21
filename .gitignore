@@ -1,3 +1,4 @@
 custom.*
 /custom-scripts
 Chart.lock
+/charts/**/charts/common
