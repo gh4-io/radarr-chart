@@ -771,7 +771,7 @@ entries:
       RSS feeds for new episodes of your favorite shows and will grab, sort and rename
       them. It can also be configured to automatically upgrade the quality of files
       already downloaded when a better quality format becomes available.
-    digest: 718702fa550fba2cfc71eb3a51bbac37a9d29da943e0b0009f1482db15002001
+    digest: fa04b6ed0f5f1d87ec9326d892a9d40d8a7de9454caf42cc3c593a9363c3f227
     home: https://sonarr.video/
     icon: https://raw.githubusercontent.com/Sonarr/Sonarr/develop/Logo/256.png
     keywords:
