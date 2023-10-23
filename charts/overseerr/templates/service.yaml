@@ -1,18 +1,6 @@
-{{- if ( .Values.service.enabled | default false ) }}
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ include "overseerr.fullname" . }}
-  labels:
-    {{- include "overseerr.labels" . | nindent 4 }}
-    app.kubernetes.io/component: service
-spec:
-  type: {{ .Values.service.type | default "ClusterIP" }}
-  ports:
-    - port: {{ .Values.service.port | default 5055 }}
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    {{- include "overseerr.selectorLabels" . | nindent 4 }}
+{{- if (.Values.service.enabled | default false) -}}
+{{- include "common.service" (list . "overseerr.service") -}}
+{{- end -}}
+
+{{- define "overseerr.service" -}}
 {{- end -}}

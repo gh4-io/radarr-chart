@@ -11,7 +11,7 @@ keywords:
   - management
   - web
   - http
-version: 0.1.24
+version: 1.0.0
 appVersion: "develop"
 icon: https://raw.githubusercontent.com/Sonarr/Sonarr/develop/Logo/256.png
 home: https://sonarr.video/
@@ -19,3 +19,7 @@ sources:
   - https://github.com/Sonarr/Sonarr
   - https://github.com/gh4-io/thin-client-charts
   - https://wiki.servarr.com/sonarr
+dependencies:
+  - name: common
+    version: 0.1.1
+    repository: https://gh4-io.github.io/common-library-chart/
