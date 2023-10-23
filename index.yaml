@@ -645,6 +645,37 @@ entries:
       app: readarr
     apiVersion: v2
     appVersion: latest
+    created: "2023-10-23T21:50:45.310085247Z"
+    dependencies:
+    - name: common
+      repository: https://gh4-io.github.io/common-library-chart/
+      version: 0.1.1
+    description: A Helm chart for Kubernetes
+    digest: c69fa5e4563bb8a366efde493fb19391dd69586c1e31ae309e6e64a7b64ff512
+    home: https://readarr.com/
+    icon: https://raw.githubusercontent.com/Readarr/Readarr/develop/Logo/256.png
+    keywords:
+    - servarr
+    - readarr
+    - books
+    - magazines
+    - reading
+    - management
+    - web
+    - http
+    name: readarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/readarr
+    - https://github.com/gh4-io/thin-client-charts
+    - https://github.com/Readarr/Readarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/readarr-0.1.5/readarr-0.1.5.tgz
+    version: 0.1.5
+  - annotations:
+      app: readarr
+    apiVersion: v2
+    appVersion: latest
     created: "2023-10-21T02:38:20.583837818Z"
     dependencies:
     - name: common
@@ -961,4 +992,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.9/sonarr-0.1.9.tgz
     version: 0.1.9
-generated: "2023-10-21T02:38:20.583928419Z"
+generated: "2023-10-23T21:50:45.31050275Z"
