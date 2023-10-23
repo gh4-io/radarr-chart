@@ -1,0 +1,6 @@
+{{- if (.Values.autoscaling.enabled | default false) -}}
+{{- include "common.hpa" (list . "<CHARTNAME>.hpa") -}}
+{{- end -}}
+
+{{- define "<CHARTNAME>.hpa" -}}
+{{- end -}}

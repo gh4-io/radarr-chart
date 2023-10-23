@@ -1,0 +1,3 @@
+{{- include "common.deployment" (list . "<CHARTNAME>.deployment") -}}
+{{- define "<CHARTNAME>.deployment" -}}
+{{- end -}}

@@ -1,0 +1,6 @@
+{{- if (.Values.ingress.enabled | default false) -}}
+{{- include "common.ingress" (list . "<CHARTNAME>.ingress") -}}
+{{- end -}}
+
+{{- define "<CHARTNAME>.ingress" -}}
+{{- end -}}

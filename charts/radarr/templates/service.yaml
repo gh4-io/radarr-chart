@@ -1,18 +1,6 @@
-{{- if ( .Values.service.enabled | default false ) }}
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ include "radarr.fullname" . }}
-  labels:
-    {{- include "radarr.labels" . | nindent 4 }}
-    app.kubernetes.io/component: service
-spec:
-  type: {{ .Values.service.type | default "ClusterIP" }}
-  ports:
-    - port: {{ .Values.service.port | default 7878 }}
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    {{- include "radarr.selectorLabels" . | nindent 4 }}
+{{- if (.Values.service.enabled | default false) -}}
+{{- include "common.service" (list . "radarr.service") -}}
+{{- end -}}
+
+{{- define "radarr.service" -}}
 {{- end -}}

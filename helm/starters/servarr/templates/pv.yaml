@@ -1,6 +1,6 @@
 {{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
-{{- include "common.pv" (list . "radarr.pv") -}}
+{{- include "common.pv" (list . "<CHARTNAME>.pv") -}}
 {{- end -}}
 
-{{- define "radarr.pv" -}}
+{{- define "<CHARTNAME>.pv" -}}
 {{- end -}}

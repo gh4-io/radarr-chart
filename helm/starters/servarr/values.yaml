@@ -1,4 +1,4 @@
-# Default values for radarr.
+# Default values for <CHARTNAME>.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -10,7 +10,7 @@ replicaCount: 1
 ## @param image.pullPolicy
 ## @param image.tag docker image tag
 image:
-  repository: lscr.io/linuxserver/radarr
+  repository: lscr.io/linuxserver/<CHARTNAME>
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "nightly"
@@ -22,55 +22,47 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-## @param serviceAccount.annotations
-
+## @skip serviceAccount
 serviceAccount:
-  ## @param serviceAccount.create
-  ## Specifies whether a service account should be created
-  ##
+  # Specifies whether a service account should be created
   create: false
   # Annotations to add to the service account
   annotations: {}
-  ##
-  ## @param serviceAccount.name The name of the service account to use.
-  ## If not set and create is true, a name is generated using the fullname template
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
   name: ""
-
-## @param env
-##
+## @section Env
+## @skip env
 env: {}
-## @param envSecrets
-##
+## @skip envSecrets
 envSecrets: {}
-  ## @extra envSecrets.name
-  ##
-  ## name: secret
-## @param persistence.enabled
-## @param persistence.annotations
-## @param persistence.accessMode
-## @param persistence.size
-## @extra persistence.existingClaim
-## @extra persistence.labels
-## @extra persistence.reclaimPolicy
-## @extra persistence.volumeName
-## @extra persistence.volumePath
-## @extra persistence.volumeType
+#   name: secret
+## @skip persistence
 persistence:
   enabled: false
   annotations: {}
+  # labels: {}
+  ## @param persistence.existingClaim [string, nullable] Name of exiting claim
+  ## @extra Claim type should be PVC.
   existingClaim: null
   accessMode: ReadWriteOnce
   size: 2Gi
-## @param configMap.enabled
-## create:
-##   name: "myConfig"
-##   data:
-##     - |
-##       some data here
-##     - key: value
-##
+  # reclaimPolicy: Retain
+  # volumeName: <CHARTNAME>-config
+  # volumePath: "/storage/"
+  # volumeType: DirectoryOrCreate
+
+
 configMap:
+  ## @param configMap.enabled
+  ##
   enabled: false 
+  ## create:
+  ##   name: "myConfig"
+  ##   data:
+  ##     - |
+  ##       some data here
+  ##     - key: value
 
   ## @extra configMap.existingConfigMap
   ##
@@ -92,8 +84,8 @@ media:
 
 ## @skip podAnnotations
 podAnnotations:
-  servarrUsr: radarr
-  servarrPwd: radarr
+  servarrUsr: <CHARTNAME>
+  servarrPwd: <CHARTNAME>
 
 
 ## @skip podSecurityContext
