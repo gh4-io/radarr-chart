@@ -27,68 +27,9 @@ entries:
     - https://docs.linuxserver.io/images/docker-overseerr
     type: application
     urls:
-    - https://github.com/gh4-io/thin-client-charts/releases/download/overseerr-1.0.0/overseerr-1.0.0.tgz
-    version: 1.0.0
-  - annotations:
-      app: overseerr
-    apiVersion: v2
-    appVersion: 1.33.x
-    created: "2023-10-17T02:19:43.197626045Z"
-    description: Overseerr is a request management and media discovery tool built
-      to work with your existing Plex ecosystem.
-    digest: b551fdee4c27b47d1f0a5ee6d778a6b634c1fe4c1def64708cd74a6d273e3afb
-    home: https://overseerr.video/
-    icon: https://raw.githubusercontent.com/Overseerr/Overseerr/latest/Logo/256.png
-    keywords:
-    - servarr
-    - overseerr
-    - movies
-    - series
-    - management
-    - web
-    - http
-    name: overseerr
-    sources:
-    - https://github.com/sct/overseerr
-    - https://github.com/gh4-io/thin-client-charts
-    - https://overseerr.dev/
-    - https://docs.linuxserver.io/images/docker-overseerr
-    type: application
-    urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/overseerr-0.1.0/overseerr-0.1.0.tgz
     version: 0.1.0
   prowlarr:
-  - annotations:
-      app: prowlarr
-    apiVersion: v2
-    appVersion: 1.33.x
-    created: "2023-10-20T22:41:22.391861523Z"
-    description: Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs
-      base stack to integrate with your various PVR apps. Prowlarr supports both Torrent
-      Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr,
-      Lidarr, and Readarr offering complete management of your indexers with no per
-      app Indexer setup required (we do it all).
-    digest: 144e5d15fe430937187964719f74262c0ce79e5d6b9f9512f723285c3c6cd03d
-    home: https://prowlarr.com/
-    icon: https://raw.githubusercontent.com/Prowlarr/Prowlarr/develop/Logo/256.png
-    keywords:
-    - servarr
-    - prowlarr
-    - movies
-    - series
-    - management
-    - web
-    - http
-    name: prowlarr
-    sources:
-    - https://github.com/Prowlarr/Prowlarr
-    - https://github.com/gh4-io/thin-client-charts
-    - https://wiki.servarr.com/prowlarr
-    - https://docs.linuxserver.io/images/docker-prowlarr
-    type: application
-    urls:
-    - https://github.com/gh4-io/thin-client-charts/releases/download/prowlarr-1.0.0/prowlarr-1.0.0.tgz
-    version: 1.0.0
   - annotations:
       app: prowlarr
     apiVersion: v2
@@ -152,37 +93,6 @@ entries:
     - https://github.com/gh4-io/thin-client-charts/releases/download/prowlarr-0.1.2/prowlarr-0.1.2.tgz
     version: 0.1.2
   radarr:
-  - annotations:
-      app: radarr
-    apiVersion: v2
-    appVersion: nightly
-    created: "2023-10-19T03:12:58.668983831Z"
-    description: Radarr is a movie collection manager for Usenet and BitTorrent users.
-      It can monitor multiple RSS feeds for new movies and will interface with clients
-      and indexers to grab, sort, and rename them. It can also be configured to automatically
-      upgrade the quality of existing files in the library when a better quality format
-      becomes available. Note that only one type of a given movie is supported. If
-      you want both an 4k version and 1080p version of a given movie you will need
-      multiple instances.
-    digest: af0e7434a94670c18cbf6e803d1440f531e575a0a662f13f53f7149f32093c63
-    home: https://radarr.video/
-    icon: https://raw.githubusercontent.com/Radarr/Radarr/develop/Logo/256.png
-    keywords:
-    - servarr
-    - radarr
-    - movies
-    - management
-    - web
-    - http
-    name: radarr
-    sources:
-    - https://github.com/Radarr/Radarr
-    - https://github.com/gh4-io/thin-client-charts
-    - https://wiki.servarr.com/radarr
-    type: application
-    urls:
-    - https://github.com/gh4-io/thin-client-charts/releases/download/radarr-1.0.0/radarr-1.0.0.tgz
-    version: 1.0.0
   - annotations:
       app: radarr
     apiVersion: v2
@@ -672,37 +582,6 @@ entries:
       app: readarr
     apiVersion: v2
     appVersion: latest
-    created: "2023-10-23T21:50:45.310085247Z"
-    dependencies:
-    - name: common
-      repository: https://gh4-io.github.io/common-library-chart/
-      version: 0.1.1
-    description: A Helm chart for Kubernetes
-    digest: c69fa5e4563bb8a366efde493fb19391dd69586c1e31ae309e6e64a7b64ff512
-    home: https://readarr.com/
-    icon: https://raw.githubusercontent.com/Readarr/Readarr/develop/Logo/256.png
-    keywords:
-    - servarr
-    - readarr
-    - books
-    - magazines
-    - reading
-    - management
-    - web
-    - http
-    name: readarr
-    sources:
-    - https://hub.docker.com/r/linuxserver/readarr
-    - https://github.com/gh4-io/thin-client-charts
-    - https://github.com/Readarr/Readarr
-    type: application
-    urls:
-    - https://github.com/gh4-io/thin-client-charts/releases/download/readarr-0.1.5/readarr-0.1.5.tgz
-    version: 0.1.5
-  - annotations:
-      app: readarr
-    apiVersion: v2
-    appVersion: latest
     created: "2023-10-21T02:38:20.583837818Z"
     dependencies:
     - name: common
@@ -762,34 +641,6 @@ entries:
     - https://github.com/gh4-io/thin-client-charts/releases/download/readarr-0.1.3/readarr-0.1.3.tgz
     version: 0.1.3
   sonarr:
-  - annotations:
-      app: sonarr
-    apiVersion: v2
-    appVersion: develop
-    created: "2023-10-17T02:19:43.497755007Z"
-    description: Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple
-      RSS feeds for new episodes of your favorite shows and will grab, sort and rename
-      them. It can also be configured to automatically upgrade the quality of files
-      already downloaded when a better quality format becomes available.
-    digest: fa04b6ed0f5f1d87ec9326d892a9d40d8a7de9454caf42cc3c593a9363c3f227
-    home: https://sonarr.video/
-    icon: https://raw.githubusercontent.com/Sonarr/Sonarr/develop/Logo/256.png
-    keywords:
-    - servarr
-    - sonarr
-    - movies
-    - management
-    - web
-    - http
-    name: sonarr
-    sources:
-    - https://github.com/Sonarr/Sonarr
-    - https://github.com/gh4-io/thin-client-charts
-    - https://wiki.servarr.com/sonarr
-    type: application
-    urls:
-    - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-1.0.0/sonarr-1.0.0.tgz
-    version: 1.0.0
   - annotations:
       app: sonarr
     apiVersion: v2
