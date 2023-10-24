@@ -5,6 +5,38 @@ entries:
       app: overseerr
     apiVersion: v2
     appVersion: 1.33.x
+    created: "2023-10-24T16:12:39.521527496Z"
+    dependencies:
+    - name: common
+      repository: https://gh4-io.github.io/common-library-chart/
+      version: 0.1.1
+    description: Overseerr is a request management and media discovery tool built
+      to work with your existing Plex ecosystem.
+    digest: 2c63ed62d79a9e4e3353a0ad08d440fd54da9c55bb5c3a0968763eb7aa76755e
+    home: https://overseerr.video/
+    icon: https://raw.githubusercontent.com/Overseerr/Overseerr/latest/Logo/256.png
+    keywords:
+    - servarr
+    - overseerr
+    - movies
+    - series
+    - management
+    - web
+    - http
+    name: overseerr
+    sources:
+    - https://github.com/sct/overseerr
+    - https://github.com/gh4-io/thin-client-charts
+    - https://overseerr.dev/
+    - https://docs.linuxserver.io/images/docker-overseerr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/overseerr-1.0.0/overseerr-1.0.0.tgz
+    version: 1.0.0
+  - annotations:
+      app: overseerr
+    apiVersion: v2
+    appVersion: 1.33.x
     created: "2023-10-17T02:19:43.197626045Z"
     description: Overseerr is a request management and media discovery tool built
       to work with your existing Plex ecosystem.
@@ -898,4 +930,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.9/sonarr-0.1.9.tgz
     version: 0.1.9
-generated: "2023-10-23T21:50:45.31050275Z"
+generated: "2023-10-24T16:12:39.521585696Z"
