@@ -1,0 +1,3 @@
+{{- include "common.deployment" (list . "recyclarr.deployment") -}}
+{{- define "recyclarr.deployment" -}}
+{{- end -}}

@@ -1,0 +1,22 @@
+apiVersion: v2
+appVersion: "6.x.x"
+description: Automatically mirror TRaSH guides to your Sonarr/Radarr instance.
+name: recyclarr
+type: application
+keywords:
+  - recyclarr
+  - servarr
+  - radarr
+  - sonarr
+  - trash-guide
+  - sync
+  - management
+version: 1.0.1
+icon: https://raw.githubusercontent.com/recyclarr/recyclarr/recyclarr/src/Recyclarr/wwwroot/android-chrome-256x256.png
+home: https://recyclarr.dev/
+sources: 
+  - https://github.com/recyclarr/recyclarr
+dependencies:
+  - name: common
+    version: 0.1.2
+    repository: https://gh4-io.github.io/common-library-chart/

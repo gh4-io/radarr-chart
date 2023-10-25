@@ -1,0 +1,6 @@
+{{- if (.Values.ingress.enabled | default false) -}}
+{{- include "common.ingress" (list . "recyclarr.ingress") -}}
+{{- end -}}
+
+{{- define "recyclarr.ingress" -}}
+{{- end -}}

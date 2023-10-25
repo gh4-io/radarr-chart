@@ -1,0 +1,6 @@
+{{- if (.Values.autoscaling.enabled | default false) -}}
+{{- include "common.hpa" (list . "recyclarr.hpa") -}}
+{{- end -}}
+
+{{- define "recyclarr.hpa" -}}
+{{- end -}}

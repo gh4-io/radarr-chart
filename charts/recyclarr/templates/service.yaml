@@ -1,0 +1,6 @@
+{{- if (.Values.service.enabled | default false) -}}
+{{- include "common.service" (list . "recyclarr.service") -}}
+{{- end -}}
+
+{{- define "recyclarr.service" -}}
+{{- end -}}

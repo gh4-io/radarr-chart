@@ -1,0 +1,6 @@
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+{{- include "common.pvc" (list . "recyclarr.pvc") -}}
+{{- end -}}
+
+{{- define "recyclarr.pvc" -}}
+{{- end -}}
