@@ -1,0 +1,6 @@
+{{- if (.Values.autoscaling.enabled | default false) -}}
+{{- include "common.hpa" (list . "lidarr.hpa") -}}
+{{- end -}}
+
+{{- define "lidarr.hpa" -}}
+{{- end -}}

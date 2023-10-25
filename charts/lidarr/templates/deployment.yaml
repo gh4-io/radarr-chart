@@ -1,0 +1,3 @@
+{{- include "common.deployment" (list . "lidarr.deployment") -}}
+{{- define "lidarr.deployment" -}}
+{{- end -}}

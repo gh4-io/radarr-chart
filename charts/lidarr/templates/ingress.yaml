@@ -1,0 +1,6 @@
+{{- if (.Values.ingress.enabled | default false) -}}
+{{- include "common.ingress" (list . "lidarr.ingress") -}}
+{{- end -}}
+
+{{- define "lidarr.ingress" -}}
+{{- end -}}

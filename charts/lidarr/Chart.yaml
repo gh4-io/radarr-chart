@@ -1,0 +1,25 @@
+apiVersion: v2
+name: lidarr
+annotations:
+  app: lidarr
+description: Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
+type: application
+keywords:
+  - servarr
+  - lidarr
+  - music
+  - songs
+  - management
+  - web
+  - http
+version: 1.0.1
+appVersion: "1.4.x"
+icon: https://raw.githubusercontent.com/Lidarr/Lidarr/develop/Logo/256.png
+home: https://overseerr.video/
+sources: 
+  - https://github.com/Lidarr/Lidarr/releases
+  - https://github.com/gh4-io/thin-client-charts
+dependencies:
+  - name: common
+    version: 0.1.2
+    repository: https://gh4-io.github.io/common-library-chart/
