@@ -18,7 +18,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.5
+version: 0.1.6
 
 keywords:
   - servarr
@@ -46,5 +46,5 @@ icon: https://raw.githubusercontent.com/Readarr/Readarr/develop/Logo/256.png
 appVersion: "latest"
 dependencies:
   - name: common
-    version: 0.1.1
+    version: 0.1.2
     repository: https://gh4-io.github.io/common-library-chart/

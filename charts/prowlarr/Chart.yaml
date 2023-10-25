@@ -12,7 +12,7 @@ keywords:
   - management
   - web
   - http
-version: 1.0.0
+version: 1.0.1
 appVersion: 1.33.x
 icon: https://raw.githubusercontent.com/Prowlarr/Prowlarr/develop/Logo/256.png
 home: https://prowlarr.com/
@@ -23,5 +23,5 @@ sources:
   - https://docs.linuxserver.io/images/docker-prowlarr
 dependencies:
   - name: common
-    version: 0.1.1
+    version: 0.1.2
     repository: https://gh4-io.github.io/common-library-chart/

@@ -12,7 +12,7 @@ keywords:
   - management
   - web
   - http
-version: 1.0.0
+version: 1.0.1
 appVersion: 1.33.x
 icon: https://raw.githubusercontent.com/Overseerr/Overseerr/latest/Logo/256.png
 home: https://overseerr.video/
@@ -23,5 +23,5 @@ sources:
   - https://docs.linuxserver.io/images/docker-overseerr
 dependencies:
   - name: common
-    version: 0.1.1
+    version: 0.1.2
     repository: https://gh4-io.github.io/common-library-chart/
