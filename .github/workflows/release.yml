@@ -19,25 +19,25 @@ jobs:
         with:
           fetch-depth: 0
     
-      - name: Install readme-generator-for-helm
-        run: npm install -g @bitnami/readme-generator-for-helm
+      # - name: Install readme-generator-for-helm
+      #   run: npm install -g @bitnami/readme-generator-for-helm
       
-      - name: Execute readme-generator-for-helm
-        run: |
-          r_param="## Parameters"
-          rmf="README.md"
-          charts_dirs_changed=($(find charts/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n'))
-          for chart in ${charts_dirs_changed}; do
-            echo "Updating $rmf for ${chart}"
-            cd $GITHUB_WORKSPACE/charts/${chart}
-            if [[ ! -f $rmf ]]; then
-              echo "$r_param" > $rmf
-            elif ! (grep "$r_param" $rmf); then
-              echo "No $r_param found in the $rmf file. This must be done first"
-              exit 1
-            fi
-            readme-generator -v values.yaml -r $rmf --schema "/tmp/schema.json"
-          done
+      # - name: Execute readme-generator-for-helm
+      #   run: |
+      #     r_param="## Parameters"
+      #     rmf="README.md"
+      #     charts_dirs_changed=($(find charts/ -maxdepth 1 -mindepth 1 -type d -printf '%f\n'))
+      #     for chart in ${charts_dirs_changed}; do
+      #       echo "Updating $rmf for ${chart}"
+      #       cd $GITHUB_WORKSPACE/charts/${chart}
+      #       if [[ ! -f $rmf ]]; then
+      #         echo "$r_param" > $rmf
+      #       elif ! (grep "$r_param" $rmf); then
+      #         echo "No $r_param found in the $rmf file. This must be done first"
+      #         exit 1
+      #       fi
+      #       readme-generator -v values.yaml -r $rmf --schema "/tmp/schema.json"
+      #     done
 
       - name: Configure Git
         run: |

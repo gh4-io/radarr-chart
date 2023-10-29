@@ -1,0 +1,9 @@
+{{- include "common.deployment" (list . "calibre.deployment") -}}
+{{- define "calibre.deployment" -}}
+spec:
+  template:
+    spec:
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+{{- end -}}

@@ -1,0 +1,57 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "common.fullname" . }}
+  labels:
+    {{- include "common.labels" . | nindent 4 }}
+spec:
+  concurrencyPolicy: Allow
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          affinity: {}
+          containers:
+            - image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+              name: {{ .Chart.Name }}
+              # {{- if .Values.primary.command }}
+              # command:
+              #   {{- range $key, $val := .Values.primary.command }}
+              #   {{- $val | nindent 16 }}
+              #   {{- end }}
+              # {{- end }}
+              # {{- if .Values.primary.args }}
+              # args:
+              #   {{- range $key, $val := .Values.primary.args }}
+              #   {{- $val | nindent 16 }}
+              #   {{- end }}
+              # {{- end }}
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              # {{- if .Values.persistence.enabled }}
+              # volumeMounts:
+              #   {{- include "common.primaryConfigMap" . | nindent 16 }}
+              #   {{- if .Values.persistence.enabled }}
+              #   - mountPath: {{ .Values.persistence.path | default "/config" }}
+              #     name: config
+              #   {{- end }}
+              # {{- end }}
+          dnsPolicy: ClusterFirst
+          restartPolicy: Never
+          schedulerName: default-scheduler
+          securityContext: {}
+          # terminationGracePeriodSeconds: {{- .Values.terminationGracePeriodSeconds }}
+          {{- if}}
+          volumes:
+            {{- if .Values.persistence.enabled }}
+            - name: config
+              persistentVolumeClaim:
+                claimName: {{ default ( include "common.pvcName" . ) .Values.persistence.existingClaim }}
+            {{- end }}
+            {{- include "common.volumeConfigMap" . | nindent 12 }}
+  # schedule: {{- .Values.schedule }}
+  # successfulJobsHistoryLimit: {{- .Values.successfulJobHistoryLimit }}
+  # suspend: {{- .Values.suspend }}

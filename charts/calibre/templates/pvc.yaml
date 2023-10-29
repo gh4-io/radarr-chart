@@ -1,0 +1,6 @@
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+{{- include "common.pvc" (list . "calibre.pvc") -}}
+{{- end -}}
+
+{{- define "calibre.pvc" -}}
+{{- end -}}

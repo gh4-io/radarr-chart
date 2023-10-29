@@ -1,0 +1,6 @@
+{{- if (.Values.autoscaling.enabled | default false) -}}
+{{- include "common.hpa" (list . "calibre.hpa") -}}
+{{- end -}}
+
+{{- define "calibre.hpa" -}}
+{{- end -}}
