@@ -1,5 +1,24 @@
 apiVersion: v1
 entries:
+  calibre:
+  - apiVersion: v2
+    appVersion: 6.x.x
+    created: "2023-10-29T21:33:19.953829487Z"
+    description: calibre is an e-book manager. It can view, convert, edit and catalog
+      e-books in all of the major e-book formats. It can also talk to e-book reader
+      devices. It can go out to the internet and fetch metadata for your books. It
+      can download newspapers and convert them into e-books for convenient reading.
+      It is cross platform, running on Linux, Windows and macOS.
+    digest: 34cd5209aa2e64593b560742c624e23a8c2a0379a91175d6d0ffa8f11dd71467
+    home: https://github.com/kovidgoyal/calibre
+    icon: https://raw.githubusercontent.com/kovidgoyal/calibre/master/icons/calibre.png
+    name: calibre
+    sources:
+    - https://hub.docker.com/r/linuxserver/calibre
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/calibre-0.1.0/calibre-0.1.0.tgz
+    version: 0.1.0
   lidarr:
   - annotations:
       app: lidarr
@@ -967,6 +986,29 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/recyclarr-1.0.1/recyclarr-1.0.1.tgz
     version: 1.0.1
+  recyclarr-cron:
+  - apiVersion: v2
+    appVersion: 6.x.x
+    created: "2023-10-29T21:33:20.167413057Z"
+    description: Automatically mirror TRaSH guides to your Sonarr/Radarr instance.
+    digest: 01605c63691244e61a46181f7b3ae479acca4fd535cb8d1fa5a825e0ff46cd29
+    home: https://recyclarr.dev/
+    icon: https://raw.githubusercontent.com/recyclarr/recyclarr/recyclarr/src/Recyclarr/wwwroot/android-chrome-256x256.png
+    keywords:
+    - recyclarr
+    - servarr
+    - radarr
+    - sonarr
+    - trash-guide
+    - sync
+    - management
+    name: recyclarr-cron
+    sources:
+    - https://github.com/recyclarr/recyclarr
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/recyclarr-cron-0.0.1/recyclarr-cron-0.0.1.tgz
+    version: 0.0.1
   sonarr:
   - annotations:
       app: sonarr
@@ -1289,4 +1331,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.9/sonarr-0.1.9.tgz
     version: 0.1.9
-generated: "2023-10-25T20:21:23.470619178Z"
+generated: "2023-10-29T21:33:20.167511365Z"
