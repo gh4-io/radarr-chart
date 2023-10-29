@@ -3,6 +3,28 @@ entries:
   calibre:
   - apiVersion: v2
     appVersion: 6.x.x
+    created: "2023-10-29T21:45:54.348197566Z"
+    dependencies:
+    - name: common
+      repository: https://gh4-io.github.io/common-library-chart/
+      version: 0.1.2
+    description: calibre is an e-book manager. It can view, convert, edit and catalog
+      e-books in all of the major e-book formats. It can also talk to e-book reader
+      devices. It can go out to the internet and fetch metadata for your books. It
+      can download newspapers and convert them into e-books for convenient reading.
+      It is cross platform, running on Linux, Windows and macOS.
+    digest: bc498d8cdd927cf613f00dd1750ae02860191dfd2357e969952e3d5922649921
+    home: https://github.com/kovidgoyal/calibre
+    icon: https://raw.githubusercontent.com/kovidgoyal/calibre/master/icons/calibre.png
+    name: calibre
+    sources:
+    - https://hub.docker.com/r/linuxserver/calibre
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/calibre-0.1.1/calibre-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 6.x.x
     created: "2023-10-29T21:33:19.953829487Z"
     description: calibre is an e-book manager. It can view, convert, edit and catalog
       e-books in all of the major e-book formats. It can also talk to e-book reader
@@ -1331,4 +1353,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.9/sonarr-0.1.9.tgz
     version: 0.1.9
-generated: "2023-10-29T21:33:20.167511365Z"
+generated: "2023-10-29T21:45:54.34828077Z"
