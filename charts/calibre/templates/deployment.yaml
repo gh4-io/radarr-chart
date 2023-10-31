@@ -3,7 +3,8 @@
 spec:
   template:
     spec:
-      securityContext:
-        seccompProfile:
-          type: RuntimeDefault
+      containers:
+        - securityContext:
+            seccompProfile:
+              type: Unconfined
 {{- end -}}
