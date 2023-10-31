@@ -3,6 +3,28 @@ entries:
   calibre:
   - apiVersion: v2
     appVersion: 6.x.x
+    created: "2023-10-31T17:03:01.333108542Z"
+    dependencies:
+    - name: common
+      repository: https://gh4-io.github.io/common-library-chart/
+      version: 0.1.2
+    description: calibre is an e-book manager. It can view, convert, edit and catalog
+      e-books in all of the major e-book formats. It can also talk to e-book reader
+      devices. It can go out to the internet and fetch metadata for your books. It
+      can download newspapers and convert them into e-books for convenient reading.
+      It is cross platform, running on Linux, Windows and macOS.
+    digest: 66f052909731e9154d89152ca4499bed9dfeb5818ac2e43e823a09cb451b0475
+    home: https://github.com/kovidgoyal/calibre
+    icon: https://raw.githubusercontent.com/kovidgoyal/calibre/master/icons/calibre.png
+    name: calibre
+    sources:
+    - https://hub.docker.com/r/linuxserver/calibre
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/calibre-0.1.2/calibre-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 6.x.x
     created: "2023-10-29T21:45:54.348197566Z"
     dependencies:
     - name: common
@@ -40,6 +62,28 @@ entries:
     type: application
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/calibre-0.1.0/calibre-0.1.0.tgz
+    version: 0.1.0
+  calibre-web:
+  - apiVersion: v2
+    appVersion: nightly
+    created: "2023-10-31T17:03:01.529162848Z"
+    dependencies:
+    - name: common
+      repository: https://gh4-io.github.io/common-library-chart/
+      version: 0.1.2
+    description: Calibre-web is a web app providing a clean interface for browsing,
+      reading and downloading eBooks using an existing Calibre database. It is also
+      possible to integrate google drive and edit metadata and your calibre library
+      through the app itself.
+    digest: 28a102ff4048145b9cd0c8d0d1899a5331bfef9cfa0cbcacae79c91eed37ded9
+    home: https://github.com/janeczku/calibre-web
+    icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/calibre-web-icon.png
+    name: calibre-web
+    sources:
+    - https://hub.docker.com/r/linuxserver/calibre-web
+    type: application
+    urls:
+    - https://github.com/gh4-io/thin-client-charts/releases/download/calibre-web-0.1.0/calibre-web-0.1.0.tgz
     version: 0.1.0
   lidarr:
   - annotations:
@@ -1353,4 +1397,4 @@ entries:
     urls:
     - https://github.com/gh4-io/thin-client-charts/releases/download/sonarr-0.1.9/sonarr-0.1.9.tgz
     version: 0.1.9
-generated: "2023-10-29T21:45:54.34828077Z"
+generated: "2023-10-31T17:03:01.529307156Z"
