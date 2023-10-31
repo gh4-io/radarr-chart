@@ -1,0 +1,6 @@
+{{- if (.Values.ingress.enabled | default false) -}}
+{{- include "common.ingress" (list . "calibre-web.ingress") -}}
+{{- end -}}
+
+{{- define "calibre-web.ingress" -}}
+{{- end -}}

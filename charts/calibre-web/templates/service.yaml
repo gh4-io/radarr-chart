@@ -1,0 +1,6 @@
+{{- if (.Values.service.enabled | default false) -}}
+{{- include "common.service" (list . "calibre-web.service") -}}
+{{- end -}}
+
+{{- define "calibre-web.service" -}}
+{{- end -}}

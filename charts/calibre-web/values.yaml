@@ -1,0 +1,175 @@
+# Default values for calibre-web.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+## @param replicaCount set count of replicas.
+replicaCount: 1
+
+## @section Image
+## @param image.repository docker image registry
+## @param image.pullPolicy
+## @param image.tag docker image tag
+image:
+  repository: lscr.io/linuxserver/calibre-web
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "nightly"
+
+## @skip imagePullSecrets
+## @skip nameOverride
+## @skip fullnameOverride
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+## @skip serviceAccount
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+## @section Env
+## @skip env
+env: {}
+## @skip envSecrets
+envSecrets: {}
+#   name: secret
+## @skip persistence
+persistence:
+  enabled: false
+  annotations: {}
+  # labels: {}
+  ## @param persistence.existingClaim [string, nullable] Name of exiting claim
+  ## @extra Claim type should be PVC.
+  existingClaim: null
+  accessMode: ReadWriteOnce
+  size: 2Gi
+  # reclaimPolicy: Retain
+  # volumeName: calibre-web-config
+  # volumePath: "/storage/"
+  # volumeType: DirectoryOrCreate
+
+
+configMap:
+  ## @param configMap.enabled
+  ##
+  enabled: false 
+  ## create:
+  ##   name: "myConfig"
+  ##   data:
+  ##     - |
+  ##       some data here
+  ##     - key: value
+
+  ## @extra configMap.existingConfigMap
+  ##
+  ## existingConfigMap: {}
+  ## - exampleConfigMap:
+  ##    mntName: myConfig
+  ##    path: /config
+  ##    pod: primary
+  ##    subpath: script.sh
+
+
+
+## @param media.enabled Enables root media folder
+## @param media.existingClaim [string] Name of the existing claim
+## @param media.path [string] Path to root media folder
+media:
+  enabled: false
+  existingClaim: ""
+
+## @skip podAnnotations
+podAnnotations:
+  servarrUsr: calibre-web
+  servarrPwd: calibre-web
+
+
+## @skip podSecurityContext
+podSecurityContext: {}
+# fsGroup: 2000
+
+## @skip securityContext
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+
+## @skip service
+service:
+  enabled: true
+  type: ClusterIP
+  port: 7878
+
+
+## @skip strategy
+strategy:
+  rollingUpdate:
+    maxSurge: 25%
+    maxUnavailable: 25%
+  type: RollingUpdate
+
+## @skip ingress
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  # kubernetes.io/ingress.class: nginx
+  # kubernetes.io/tls-acme: "true"
+  hosts:
+  - host: chart-example.local
+    paths:
+    - path: /
+      pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+#    hosts:
+#      - chart-example.local
+
+
+## @skip resources
+resources: {}
+# We usually recommend not to specify default resources and to leave this as a conscious
+# choice for the user. This also increases chances charts run on environments with little
+# resources, such as Minikube. If you do want to specify resources, uncomment the following
+# lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
+
+# 'volumePermissions' init container parameters
+# Changes the owner and group of the persistent volume mount point to runAsUser:fsGroup values
+#   based on the podSecurityContext/containerSecurityContext parameters
+#
+volumePermissions:
+  ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
+  ## @param volumePermissions.extraCommands
+  enabled: false
+  extraCommands: []
+
+## @skip autoscaling
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+## @skip nodeSelector
+nodeSelector: {}
+
+## @skip tolerations
+tolerations: {}
+
+## @skip affinity
+affinity: {}

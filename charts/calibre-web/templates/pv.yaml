@@ -1,0 +1,6 @@
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+{{- include "common.pv" (list . "calibre-web.pv") -}}
+{{- end -}}
+
+{{- define "calibre-web.pv" -}}
+{{- end -}}
